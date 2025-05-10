@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/rendob/assenvle#readme",
   "description": "Merge environment variables for a given mode into a single file.",
+  "dependencies": {
+    "commander": "^13.1.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@tsconfig/node24": "^24.0.0",
