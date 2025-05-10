@@ -5,7 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "concurrently -c auto npm:check:*",
+    "check:biome": "biome check",
+    "check:tsc": "tsc --noEmit",
+    "fix": "biome check --write",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -20,9 +25,12 @@
   "homepage": "https://github.com/rendob/assenvle#readme",
   "description": "Merge environment variables for a given mode into a single file.",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@tsconfig/node24": "^24.0.0",
     "@tsconfig/strictest": "^2.0.5",
     "@types/node": "^22.15.17",
+    "concurrently": "^9.1.2",
+    "husky": "^9.1.7",
     "typescript": "^5.8.3"
   },
   "volta": {
