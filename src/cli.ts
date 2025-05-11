@@ -1,14 +1,14 @@
 #! /usr/bin/env node
 
 import { getArgs } from "./args.js";
+import { assenvle } from "./assenvle.js";
 import { getConfig } from "./config.js";
 
-function main() {
+async function main() {
   const args = getArgs();
   const config = getConfig();
 
-  console.log("Arguments:", args);
-  console.log("Config:", config);
+  await assenvle(args.mode, config);
 }
 
 main();
