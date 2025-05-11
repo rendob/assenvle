@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "type": "module",
+  "bin": {
+    "assenvle": "dist/cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "check": "concurrently -c auto npm:check:*",
