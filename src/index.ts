@@ -1,1 +1,1 @@
-console.log("Hello, world!");
+export { defineConfig } from "./config.js";
