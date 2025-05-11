@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { confirm } from "@inquirer/prompts";
+import chokidar from "chokidar";
 import dotenv from "dotenv";
 import type { AssenvleConfig } from "./config.js";
 
@@ -67,4 +68,14 @@ export async function assenvle(
     console.error(`canceled to create ${outputFile}`);
     process.exit(1);
   }
+}
+
+export function assenvleOnChange(mode: string, config: AssenvleConfig) {
+  chokidar
+    .watch(getEnvFilePaths(config.envDir, mode))
+    .on("change", async (path) => {
+      const relativePath = path.replace(`${process.cwd()}/`, "");
+      console.info(`changed ${relativePath}`);
+      await assenvle(mode, config);
+    });
 }

@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import { getArgs } from "./args.js";
-import { assenvle } from "./assenvle.js";
+import { assenvle, assenvleOnChange } from "./assenvle.js";
 import { getConfig } from "./config.js";
 
 async function main() {
@@ -9,6 +9,10 @@ async function main() {
   const config = getConfig();
 
   await assenvle(args.mode, config);
+
+  if (args.watch) {
+    assenvleOnChange(args.mode, config);
+  }
 }
 
 main();
