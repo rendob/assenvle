@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "assenvle": "file:../.."
+  },
+  "volta": {
+    "node": "24.0.1"
+  }
+}
