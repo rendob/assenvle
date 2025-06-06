@@ -20,7 +20,8 @@ function readEnvFile(fileName: string): string {
 describe("assenvle", () => {
   it.each([
     { dirName: "zero-config", outputFile: ".env.local" },
-    { dirName: "with-config", outputFile: ".env.generated.local" },
+    { dirName: "config-mjs", outputFile: ".env.generated.local" },
+    { dirName: "config-ts", outputFile: ".env.generated.local" },
   ])("success: $dirName", ({ dirName, outputFile }) => {
     setUp(dirName);
 

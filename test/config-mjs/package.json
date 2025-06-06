@@ -1,0 +1,11 @@
+{
+  "name": "test-config-mjs",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "assenvle": "file:../.."
+  },
+  "volta": {
+    "node": "24.0.1"
+  }
+}

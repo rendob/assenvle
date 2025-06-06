@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "test-config-ts",
   "private": true,
   "type": "module",
   "devDependencies": {
