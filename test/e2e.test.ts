@@ -18,18 +18,18 @@ function readEnvFile(fileName: string): string {
 }
 
 describe("assenvle", () => {
-  it.each([{ dirName: "zero-config", outputFile: ".env.local" }])(
-    "success: $dirName",
-    ({ dirName, outputFile }) => {
-      setUp(dirName);
+  it.each([
+    { dirName: "zero-config", outputFile: ".env.local" },
+    { dirName: "with-config", outputFile: ".env.generated.local" },
+  ])("success: $dirName", ({ dirName, outputFile }) => {
+    setUp(dirName);
 
-      execSync("npx assenvle -m development", { stdio: "inherit" });
-      const result = readEnvFile(outputFile);
+    execSync("npx assenvle -m development", { stdio: "inherit" });
+    const result = readEnvFile(outputFile);
 
-      const expected = readEnvFile(".env.expected");
-      expect(result).toBe(expected);
+    const expected = readEnvFile(".env.expected");
+    expect(result).toBe(expected);
 
-      tearDown(outputFile);
-    },
-  );
+    tearDown(outputFile);
+  });
 });
