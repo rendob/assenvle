@@ -9,7 +9,7 @@ function setUp(testDirName: string): void {
 }
 
 function tearDown(outputFile: string): void {
-  rmSync(outputFile);
+  rmSync(outputFile, { force: true });
   rmSync("node_modules", { recursive: true, force: true });
 }
 
@@ -22,6 +22,7 @@ describe("assenvle", () => {
     { dirName: "zero-config", outputFile: ".env.local" },
     { dirName: "config-mjs", outputFile: ".env.generated.local" },
     { dirName: "config-ts", outputFile: ".env.generated.local" },
+    { dirName: "validation", outputFile: ".env.local" },
   ])("success: $dirName", ({ dirName, outputFile }) => {
     setUp(dirName);
 
@@ -32,5 +33,17 @@ describe("assenvle", () => {
     expect(result).toBe(expected);
 
     tearDown(outputFile);
+  });
+
+  it("throw error on validation failure", () => {
+    setUp("validation");
+
+    const block = () => {
+      execSync("npx assenvle -m staging", { stdio: "inherit" });
+    };
+
+    expect(block).toThrowError();
+
+    tearDown(".env.local");
   });
 });
