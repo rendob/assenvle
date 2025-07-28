@@ -12,7 +12,7 @@
     "check:biome": "biome check",
     "check:tsc": "tsc --noEmit",
     "fix": "biome check --write",
-    "test": "vitest run",
+    "test": "npm run build && vitest run",
     "prepare": "husky"
   },
   "repository": {
