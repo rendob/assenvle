@@ -21,7 +21,10 @@
   },
   "author": "rendob",
   "license": "MIT",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "bugs": {
     "url": "https://github.com/rendob/assenvle/issues"
   },
