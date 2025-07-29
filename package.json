@@ -38,13 +38,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@tsconfig/node24": "^24.0.0",
+    "@tsconfig/node24": "^24.0.1",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^22.15.17",
-    "concurrently": "^9.1.2",
+    "@types/node": "^24.1.0",
+    "concurrently": "^9.2.0",
     "husky": "^9.1.7",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.2"
+    "vitest": "^3.2.4"
   },
   "volta": {
     "node": "24.0.1"
