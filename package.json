@@ -31,10 +31,10 @@
   "homepage": "https://github.com/rendob/assenvle#readme",
   "description": "Merge environment variables for a given mode into a single file.",
   "dependencies": {
-    "@inquirer/prompts": "^7.5.1",
+    "@inquirer/prompts": "^7.8.0",
     "chokidar": "^4.0.3",
-    "commander": "^13.1.0",
-    "dotenv": "^16.5.0"
+    "commander": "^14.0.0",
+    "dotenv": "^17.2.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
